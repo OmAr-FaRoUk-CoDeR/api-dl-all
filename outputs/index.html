@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1a6bff">
+<meta name="description" content="GAME ONLINE — متجر أجهزة الألعاب وملحقاتها في العراق. توصيل لجميع المحافظات والدفع عند الاستلام.">
+<title>GAME ONLINE</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a6bff'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='Arial' font-weight='700' fill='white'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1a6bff;
+  --blue-d:#0d4ed8;
+  --ink:#12141a;
+  --muted:#6b7280;
+  --line:#e6e8ee;
+  --soft:#f3f6fb;
+  --deal:#e10600;
+  --night:#101218;
+  --max:1180px;
+  --font:'Readex Pro','Segoe UI',Tahoma,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:156px;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font:15px/1.7 var(--font);font-weight:400;overflow-x:clip}
+img{max-width:100%;display:block}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+a{color:inherit;text-decoration:none}
+[hidden]{display:none!important}
+::selection{background:#d6e4ff}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+
+.topbar{background:var(--night);color:#d5d8e0;font-size:12.5px;min-height:36px}
+.topbar-inner{min-height:36px;display:flex;align-items:center;justify-content:center}
+.promo{margin:0;text-align:center}
+
+.site-header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.site-header.scrolled{box-shadow:0 8px 24px rgba(17,24,39,.06)}
+.bar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:24px;padding:16px 0}
+.logo{display:flex;align-items:center;gap:10px;min-width:0}
+.bar > .logo{height:auto;flex:none}
+.brand-logo{height:64px;width:auto;flex:none;object-fit:contain}
+.footer .brand-logo{height:52px}
+.mark{width:40px;height:40px;border-radius:10px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;font-size:20px;flex:none}
+.logo strong{display:block;font-size:18px;font-weight:700;letter-spacing:0;line-height:1.1;white-space:nowrap}
+.logo small{display:block;color:#9ca3af;font-size:11px;font-weight:400;margin-top:2px;white-space:nowrap}
+.search{position:relative;width:100%;min-height:46px;display:flex;align-items:center;gap:8px;border:1px solid #e5e7eb;border-radius:12px;padding:6px 12px 6px 4px;background:#f7f8fa}
+.search:focus-within{background:#fff;border-color:#9dbbff;box-shadow:0 0 0 4px rgba(26,107,255,.16)}
+.search-ico{width:18px;height:18px;flex:none;stroke:#374151;fill:none;stroke-width:2}
+.search:focus-within .search-ico{stroke:var(--blue)}
+.search input{flex:1;min-width:0;height:auto;border:0;outline:0;background:transparent;padding:8px 2px;color:#111827;font-size:15px;font-weight:600;line-height:normal}
+.search input::placeholder{color:transparent;opacity:1}
+.search-hint{position:absolute;top:50%;transform:translateY(-50%);inset-inline-start:42px;inset-inline-end:56px;color:#8b95a3;font-size:14px;font-weight:400;line-height:1.7;padding:5px 0 6px;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.search input:not(:placeholder-shown) ~ .search-hint{display:none}
+.search input::-webkit-search-cancel-button{appearance:none}
+.search-clear{width:28px;height:28px;border-radius:50%;color:#111827;font-size:18px;line-height:1;flex:none}
+.search-clear:hover{background:#eef0f3;color:#111827}
+.search button[type="submit"]{width:40px;height:36px;border-radius:9px;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+.search button[type="submit"]:hover{background:var(--blue-d)}
+.search button[type="submit"] svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
+.search-list{position:absolute;z-index:30;top:calc(100% + 8px);inset-inline:0;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(17,24,39,.12);padding:6px;max-height:min(320px,60vh);overflow:auto}
+.search-list button{width:100%;display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px;border-radius:10px;text-align:start}
+.search-list button.is-on,.search-list button:hover{background:#e8f1ff}
+.search-list img{width:44px;height:44px;object-fit:contain;background:#f6f7f9;border-radius:8px}
+.search-list strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13.5px;font-weight:600;line-height:1.35}
+.search-list small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#374151;font-size:12.5px;font-weight:500}
+.search-list span{min-width:0}
+.search-list b{font-size:12.5px;font-weight:700;white-space:nowrap;min-width:max-content}
+.search-none{margin:0;padding:12px;text-align:center;color:#374151;font-size:14px;font-weight:500}
+.head-actions{display:flex;align-items:center;gap:4px}
+.tool{display:flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 10px;border-radius:12px}
+.tool:hover{background:#f3f4f6}
+.tool svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7}
+.tool b{display:block;font-size:13px;font-weight:600;line-height:1.15}
+.tool-ico{position:relative;display:grid;place-items:center}
+.badge-count{position:absolute;top:-7px;inset-inline-end:-8px;min-width:18px;height:18px;padding:0 4px;border-radius:999px;background:var(--blue);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.badge-count.pop{animation:pop .35s ease}
+
+.navline{min-height:58px;display:flex;align-items:center;gap:12px;padding:6px 0 10px;border-top:1px solid #f2f3f5}
+.menu{position:relative;flex:none}
+.menu-btn{height:46px;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;font-weight:600;font-size:14px}
+.menu-main{display:inline-flex;align-items:center;gap:8px}
+.menu-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none}
+.menu-list{position:absolute;z-index:50;top:calc(100% + 8px);inset-inline-start:0;width:220px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px rgba(17,24,39,.12);padding:6px}
+.menu-list button{display:block;width:100%;text-align:start;padding:10px 12px;border-radius:8px;font-size:14px}
+.menu-list button:hover,.menu-list button.active{background:#e8f1ff;color:var(--blue)}
+.nav-links{display:flex;align-items:center;justify-content:flex-start;gap:6px;flex:1;min-width:0;margin:0;margin-inline-start:8px}
+.nav-links a{flex:none;text-align:center;font-size:14.5px;font-weight:500;color:#374151;padding:8px 10px;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);font-weight:700}
+
+.hero{position:relative;container-type:inline-size;margin-top:16px;border-radius:22px;overflow:hidden;aspect-ratio:2.5/1;background:#111;border:1px solid var(--line)}
+.flip{position:absolute;inset:0;outline:none}
+.flip::after{content:'';position:absolute;z-index:2;inset-inline:0;bottom:0;height:64px;pointer-events:none;background:linear-gradient(to top,rgba(6,10,20,.28),transparent)}
+.flip-stage{position:absolute;inset:0;overflow:hidden}
+.flip-card{position:absolute;inset:0;margin:0;opacity:0;z-index:0;pointer-events:none}
+.flip-card.is-on{opacity:1;z-index:1;pointer-events:auto}
+.flip-card img{width:100%;height:100%;object-fit:cover;object-position:center center;transform:scale(1.06)}
+.flip-card.is-on img{animation:heroDrift 8.5s linear forwards}
+@keyframes heroDrift{from{transform:scale(1.06)}to{transform:scale(1)}}
+.flip-btn{--shadow:clamp(96px,22cqw,150px);position:absolute;top:50%;translate:0 -50%;z-index:3;width:calc(var(--shadow) / 2);height:var(--shadow);border:0;display:grid;place-items:center;color:#fff;background:transparent}
+.flip-btn::before{content:'';position:absolute;top:50%;width:var(--shadow);height:var(--shadow);border-radius:50%;background:radial-gradient(circle at center,rgba(0,0,0,.55) 0%,rgba(0,0,0,.28) 46%,transparent 72%);pointer-events:none}
+.flip-btn:hover::before{background:radial-gradient(circle at center,rgba(0,0,0,.68) 0%,rgba(0,0,0,.34) 46%,transparent 72%)}
+.flip-btn:active::before{background:radial-gradient(circle at center,rgba(0,0,0,.76) 0%,rgba(0,0,0,.4) 48%,transparent 74%)}
+.flip-btn:focus{outline:none}
+.flip-btn:focus-visible{outline:1px solid rgba(255,255,255,.7);outline-offset:4px}
+.flip-btn svg{position:relative;z-index:1;width:clamp(16px,2.3cqw,22px);height:auto;aspect-ratio:1;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.flip-prev{inset-inline-start:0}
+.flip-prev::before{inset-inline-start:0;translate:50% -50%}
+.flip-next{inset-inline-end:0}
+.flip-next::before{inset-inline-end:0;translate:-50% -50%}
+.flip-dots{position:absolute;z-index:3;left:50%;bottom:18px;translate:-50% 0;display:flex;justify-content:center;align-items:center;gap:7px;width:max-content}
+.flip-dots button{width:28px;height:2px;border-radius:999px;background:rgba(255,255,255,.4);transition:background .4s ease}
+.flip-dots button[aria-selected="true"]{background:#fff}
+
+.cat-scroller{position:relative}
+.cat-arrow{display:none}
+.bubbles{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:18px 12px;margin:32px 0 8px}
+.bubble{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;color:#1f2937;text-align:center}
+.bubble i{width:min(100%,68px);height:68px;display:flex;align-items:center;justify-content:center;background:transparent}
+.bubble img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center}
+.bubble span{display:block;width:100%;font-size:13px;font-weight:600;line-height:1.35;min-height:2.7em}
+.bubble:hover i{translate:0 -3px}
+.bubble.active span{color:var(--blue)}
+.brand-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.brand-card{display:flex;flex-direction:column;align-items:center;gap:12px;padding:18px 12px 16px;border:1px solid #e7e9ee;border-radius:16px;background:#fff;color:#1f2937}
+.brand-card i{width:100%;height:120px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;overflow:hidden}
+.brand-card img{width:100%;height:100%;object-fit:contain}
+.brand-shelf + .brand-shelf{margin-top:28px}
+.brand-card span{font-size:15px;font-weight:700}
+.brand-card:hover{border-color:#9dbbff}
+.brand-lead{margin:-4px 0 16px;color:var(--muted)}
+.cats-page .bubbles{margin-top:4px}
+.cats-page .product-grid{margin-top:22px}
+.cats-title{display:flex;align-items:center;gap:12px;min-width:0}
+.cats-tools{display:flex;align-items:center;gap:8px}
+.filter-open{height:42px;display:inline-flex;align-items:center;gap:8px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:14px;font-weight:700}
+.filter-open svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.filter-open.is-on,.filter-open[aria-expanded="true"]{border-color:#9dbbff;color:var(--blue);box-shadow:0 0 0 4px rgba(26,107,255,.16)}
+.filter-badge{min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--blue);color:#fff;font-size:11px;line-height:18px;text-align:center}
+.sort-box{height:42px;display:inline-flex;align-items:center;gap:8px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:14px;font-weight:600}
+.sort-box select{border:0;background:transparent;font:inherit;font-weight:700;color:var(--blue);outline:none;cursor:pointer}
+.shop-meta{margin:0 0 12px;color:var(--muted);font-size:13.5px;font-weight:600}
+.filter-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 10px;border-radius:999px;background:#e8f1ff;color:var(--blue-d);font-size:13px;font-weight:700}
+.chip b{font-size:16px;line-height:1;font-weight:500}
+.chip-clear{height:32px;padding:0 4px;color:#374151;font-size:13px;font-weight:700}
+.shop-layout{display:block}
+.filter-panel{display:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px 16px;margin-bottom:18px;overflow:visible}
+.filter-panel.is-open{display:block}
+.filter-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.filter-panel-head strong{font-size:16px}
+.filter-clear{color:var(--blue);font-size:13px;font-weight:700}
+.filter-clear:disabled{color:#c5cad3;cursor:default}
+.filter-apply,.filter-shade{display:none}
+.filter-close{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;font-size:22px;line-height:1;color:#374151}
+.filter-close:hover{background:#f3f4f6}
+.filter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 22px;align-items:start}
+.filter-group{margin:0;padding:0;border:0;min-width:0}
+.filter-group h3{margin:0 0 10px;font-size:14px;font-weight:700}
+.filter-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.filter-option{display:flex;align-items:center;gap:8px;min-height:38px;margin:0;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:#f7f8fa;font-size:13.5px;font-weight:600;cursor:pointer}
+.filter-option input{width:16px;height:16px;accent-color:var(--blue);flex:none}
+.filter-option span{flex:1;min-width:0}
+.filter-option small{color:var(--muted);font-weight:700;font-size:12px}
+.filter-option:has(input:checked){border-color:var(--blue);background:#e8f1ff;color:var(--blue-d)}
+.filter-option.is-off{opacity:.4;pointer-events:none}
+.filter-option.is-off:has(input:checked){opacity:1;pointer-events:auto}
+.price-presets{display:grid;gap:8px}
+.price-presets button{height:38px;border:1px solid var(--line);border-radius:10px;background:#f7f8fa;font-size:13px;font-weight:700;text-align:center;padding:0 8px}
+.price-presets button.active{border-color:var(--blue);background:#e8f1ff;color:var(--blue)}
+.price-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.price-fields label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);font-weight:700}
+.price-fields input{height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-weight:700;color:var(--ink);background:#fff}
+.price-fields input:focus{border-color:#9dbbff;box-shadow:0 0 0 4px rgba(26,107,255,.16);outline:none}
+
+.block{margin:36px 0}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.section-head.cats-head{justify-content:space-between;flex-wrap:wrap;gap:12px 16px}
+.section-head h2{margin:0;font-size:22px;font-weight:700}
+.view-all{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-weight:600;font-size:14px}
+.view-all svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.product{position:relative;display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid #e7e9ee;border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.product:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(17,24,39,.08)}
+.product.is-hit{box-shadow:0 0 0 2px var(--blue)}
+.product-image{position:relative;aspect-ratio:4/3;display:grid;place-items:center;padding:16px;background:#f6f7f9;border-bottom:1px solid #f0f2f5;overflow:hidden}
+.product-image img{width:auto;height:72%;max-width:84%;max-height:72%;object-fit:contain;min-width:0;min-height:0}
+.product.is-cover .product-image img{width:auto;height:86%;max-width:52%;max-height:86%;object-fit:contain;border-radius:6px;box-shadow:0 8px 16px rgba(17,24,39,.12)}
+.favorite{position:absolute;top:10px;inset-inline-end:10px;width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid #eef0f3;display:grid;place-items:center;color:#111827;z-index:1}
+.favorite svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.favorite.loved{color:var(--deal)}
+.favorite.loved svg{fill:currentColor}
+.add{display:flex;align-items:center;justify-content:center;width:100%;height:44px;margin-top:auto;border-radius:0;background:var(--blue);color:#fff;font-size:14px;font-weight:700}
+.add:hover{background:var(--blue-d)}
+.add.done{background:#16a34a}
+.product-info{padding:12px 14px 14px;flex:1}
+.product h3{margin:0 0 4px;font-size:15px;font-weight:600;line-height:1.45;min-height:2.9em}
+.product-meta{margin:0 0 8px;color:var(--muted);font-size:12.5px}
+.price{font-size:15px;font-weight:700;white-space:nowrap;color:var(--ink)}
+.price small{font-weight:500;color:var(--muted);font-size:12px}
+.empty{text-align:center;color:var(--muted);padding:12px 0 4px}
+
+.mosaic{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:156px 156px;gap:12px;margin:28px 0 8px}
+.mosaic figure{margin:0;border-radius:18px;overflow:hidden}
+.mosaic figure:first-child{grid-row:1 / span 2}
+.mosaic img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+.footer{display:flex;flex-direction:column;align-items:center;gap:22px;width:100vw;margin-inline:calc(50% - 50vw);padding:36px max(20px,calc((100vw - var(--max)) / 2)) 20px;background:var(--night);color:#e7e9ee;text-align:center}
+.footer .brand-logo{height:48px}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.socials a{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:#e7e9ee;font-size:13.5px;font-weight:600}
+.socials a:hover{border-color:var(--blue);color:#fff}
+.socials svg{width:16px;height:16px;fill:currentColor;flex:none}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px}
+.footer-links a{color:#9aa3b2;font-size:13.5px;font-weight:500}
+.footer-links a:hover{color:#fff}
+.legal{display:flex;justify-content:center;width:100vw;margin-inline:calc(50% - 50vw);padding:14px max(20px,calc((100vw - var(--max)) / 2)) calc(18px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.08);background:var(--night);color:#9aa3b2;font-size:12.5px;text-align:center}
+
+.drawer-shade{position:fixed;inset:0;background:rgba(17,24,39,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer-shade.show{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;z-index:70;top:0;bottom:0;right:0;width:min(400px,92vw);background:#fff;color:var(--ink);transform:translateX(110%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;box-shadow:-16px 0 40px rgba(17,24,39,.12)}
+.cart-drawer.open{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:18px 18px 12px;border-bottom:1px solid var(--line)}
+.drawer-head h2{margin:0;font-size:20px;font-weight:700}
+.drawer-close{width:36px;height:36px;border-radius:50%;font-size:24px}
+.drawer-close:hover{background:#f3f4f6}
+.cart-list{flex:1;overflow:auto;padding:8px 18px}
+.cart-empty{color:var(--muted);text-align:center;padding:36px 0}
+.cart-row{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #f1f3f6}
+.cart-row img{width:64px;height:64px;object-fit:contain;background:#f5f7fb;border-radius:10px}
+.cart-row strong{font-size:14px}
+.cart-row small{display:block;color:var(--muted);margin-top:4px}
+.cart-row button{width:28px;height:28px;border-radius:50%;font-size:18px;color:#6b7280}
+.cart-row button:hover{background:#f3f4f6}
+.cart-foot{padding:14px 18px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:15px}
+.cart-total b{font-size:18px}
+.checkout{width:100%;height:48px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700}
+.checkout:hover:not(:disabled){background:var(--blue-d)}
+.checkout:disabled{opacity:.4;cursor:not-allowed}
+.toast{position:fixed;z-index:90;bottom:calc(18px + env(safe-area-inset-bottom));left:50%;translate:-50% 12px;opacity:0;background:#111827;color:#fff;padding:12px 16px;border-radius:10px;font-size:14px;transition:.3s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;translate:-50% 0}
+
+@keyframes pop{50%{transform:scale(1.25)}}
+
+@media(max-width:1100px){
+  .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bubbles{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 16px}
+  .bar{gap:16px}
+  .nav-links a{font-size:13.5px;padding-inline:6px}
+}
+@media(max-width:900px){
+  html{scroll-padding-top:168px}
+  .topbar-inner{padding:8px 0}
+  .promo{white-space:normal}
+  .logo small{display:none}
+  .bar{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"logo actions" "search search";gap:12px 16px;padding:12px 0 10px}
+  .logo{grid-area:logo}
+  .search{grid-area:search}
+  .head-actions{grid-area:actions;justify-self:end}
+  .action-label{display:none}
+  .navline{display:flex;align-items:center;gap:8px;min-height:0;padding:0 0 12px;border-top:0;overflow:visible}
+  .menu{width:auto;flex:none}
+  .menu-btn{width:auto;flex:none;justify-content:flex-start}
+  .menu-list{width:220px}
+  .nav-links{display:flex;flex:none;margin-inline-start:0;gap:2px}
+  .nav-links a{font-size:13.5px;padding:8px 8px}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:190px 130px}
+  .mosaic figure:first-child{grid-column:1 / -1;grid-row:1}
+  .search input{font-size:16px}
+  .search-hint{font-size:15px}
+  .cat-scroller{margin:22px 0 4px}
+  .cat-arrow{position:absolute;top:34px;translate:0 -50%;z-index:2;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid #e5e7eb;box-shadow:0 4px 10px rgba(17,24,39,.1);color:#111827}
+  .cat-arrow svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .cat-arrow:disabled{opacity:.35}
+  .cat-prev{inset-inline-start:0}
+  .cat-next{inset-inline-end:0}
+  .bubbles{display:flex;grid-template-columns:none;gap:16px;margin:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:32px;padding:2px 32px 4px;scrollbar-width:none}
+  .bubbles::-webkit-scrollbar{display:none}
+  .bubble{flex:0 0 84px;scroll-snap-align:start;scroll-snap-stop:always}
+  .filter-grid{grid-template-columns:1fr 1fr}
+  .filter-group:last-child{grid-column:1 / -1}
+  .filter-options{grid-template-columns:1fr}
+  .price-presets{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .price-presets button{font-size:12px;padding:0 4px}
+}
+@media(max-width:700px){
+  .wrap{width:calc(100% - 24px)}
+  .section-head h2{font-size:18px}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .brand-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .product h3{font-size:13.5px;min-height:2.8em}
+  .product-image{padding:12px}
+  .product-info{padding:10px 10px 12px}
+  .add{height:40px;font-size:13px}
+  .price{font-size:14px}
+  .bubble{gap:8px}
+  .bubble span{font-size:12px}
+  .hero{border-radius:16px}
+  .flip-dots{bottom:12px}
+  .flip-dots button{width:18px}
+  .footer{gap:18px;padding-top:28px}
+  .socials a{padding-inline:12px}
+}
+@media(max-width:480px){
+  .logo small{display:none}
+  .logo strong{font-size:16px}
+  .bar .brand-logo{height:48px;width:auto}
+  .navline{overflow:visible;gap:6px}
+  .nav-links a{font-size:13px;padding:8px 6px}
+  .menu-btn{padding-inline:10px}
+  .block{margin:28px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <p class="promo">توصيل لجميع محافظات العراق</p>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap bar">
+    <a class="logo" href="#home"><img class="brand-logo" src="assets/logo-store.svg?v=2" alt="Games Online"></a>
+    <form class="search" id="searchForm" role="search">
+      <label class="sr-only" for="search">بحث في المتجر</label>
+      <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <input id="search" type="search" placeholder="ابحث عن منتج أو تصنيف أو ماركة..." autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="searchList" aria-autocomplete="list">
+      <span class="search-hint" aria-hidden="true">ابحث عن منتج أو تصنيف أو ماركة...</span>
+      <button class="search-clear" id="searchClear" type="button" hidden="" aria-label="مسح البحث">×</button>
+      <button type="submit" aria-label="بحث"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button>
+      <div class="search-list" id="searchList" role="listbox" hidden=""></div>
+    </form>
+    <div class="head-actions">
+      <button class="tool" id="favOpen" type="button">
+        <span class="tool-ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></span>
+        <b class="action-label">المفضلة</b>
+      </button>
+      <button class="tool" id="cartOpen" type="button" aria-label="فتح السلة، 0 من المنتجات">
+        <span class="tool-ico">
+          <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12L5 3H2"></path><circle cx="9" cy="20" r="1.3"></circle><circle cx="18" cy="20" r="1.3"></circle></svg>
+          <span class="badge-count" id="cartCount">0</span>
+        </span>
+        <b class="action-label">السلة</b>
+      </button>
+    </div>
+  </div>
+  <nav class="wrap navline" aria-label="التنقل الرئيسي">
+    <div class="menu" id="menu">
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuList">
+        <span class="menu-main">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+          <span>كل التصنيفات</span>
+        </span>
+        <svg class="menu-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </button>
+      <div class="menu-list" id="menuList" hidden="">
+        <button type="button" data-filter="all">كل المنتجات</button>
+        <button type="button" data-filter="ps5">PlayStation</button>
+        <button type="button" data-filter="pc">أجهزة PC</button>
+        <button type="button" data-filter="audio">الصوت</button>
+        <button type="button" data-filter="control">التحكم</button>
+        <button type="button" data-filter="games">الألعاب</button>
+        <button type="button" data-filter="keyboard">الكيبورد</button>
+        <button type="button" data-filter="mouse">الماوس</button>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#categories">كل المنتجات</a>
+      <a href="#brands">الماركات</a>
+    </div>
+  </nav>
+</header>
+
+<main id="home">
+  <div class="wrap">
+    <div id="storeView">
+    <section class="hero" aria-label="العرض الرئيسي">
+      <div class="flip" id="heroFlip" tabindex="0" role="region" aria-roledescription="معرض صور" aria-label="صور العرض الرئيسي">
+        <div class="flip-stage">
+          <figure class="flip-card is-on"><img src="assets/hero-modern-sofa.jpg" alt="شابة تلعب في غرفة حديثة"></figure>
+          <figure class="flip-card" aria-hidden="true"><img src="assets/hero-modern-pc.jpg" alt="شاب يلعب على حاسوب حديث"></figure>
+          <figure class="flip-card" aria-hidden="true"><img src="assets/hero-modern-desk.jpg" alt="شابة أمام شاشة بإضاءة زرقاء"></figure>
+          <figure class="flip-card" aria-hidden="true"><img src="assets/hero-modern-together.jpg" alt="شاب وشابة يلعبان في غرفة معاصرة"></figure>
+        </div>
+        <button class="flip-btn flip-prev" id="flipPrev" type="button" aria-label="الصورة السابقة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></button>
+        <button class="flip-btn flip-next" id="flipNext" type="button" aria-label="الصورة التالية"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg></button>
+        <div class="flip-dots" id="flipDots" role="tablist" aria-label="اختيار صورة العرض">
+          <button type="button" role="tab" aria-selected="true" aria-label="صورة 1"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="صورة 2"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="صورة 3"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="صورة 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="cat-scroller" id="categories">
+      <button class="cat-arrow cat-prev" id="catPrev" type="button" aria-label="التصنيف السابق"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+      <nav class="bubbles" aria-label="التصنيفات">
+      <a class="bubble" href="#trending" data-filter="ps5"><i><img src="assets/cut-ps5.png" alt=""></i><span>PlayStation</span></a>
+      <a class="bubble" href="#trending" data-filter="pc"><i><img src="assets/cut-pc.png" alt=""></i><span>أجهزة PC</span></a>
+      <a class="bubble" href="#trending" data-filter="audio"><i><img src="assets/product-headset.webp" alt=""></i><span>الصوت</span></a>
+      <a class="bubble" href="#trending" data-filter="control"><i><img src="assets/product-controller-cutout.webp" alt=""></i><span>التحكم</span></a>
+      <a class="bubble" href="#trending" data-filter="games"><i><img src="assets/cut-elden.jpg" alt=""></i><span>الألعاب</span></a>
+      <a class="bubble" href="#trending" data-filter="keyboard"><i><img src="assets/product-keyboard-cutout.webp" alt=""></i><span>الكيبورد</span></a>
+      <a class="bubble" href="#trending" data-filter="mouse"><i><img src="assets/product-mouse.webp" alt=""></i><span>الماوس</span></a>
+      </nav>
+      <button class="cat-arrow cat-next" id="catNext" type="button" aria-label="التصنيف التالي"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+    </div>
+
+    <section class="block catalog" id="trending">
+      <div class="section-head">
+        <h2>الأكثر رواجاً</h2>
+        <a class="view-all" href="#trending" data-filter="all">عرض الكل <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></a>
+      </div>
+      <div class="product-grid">
+        <article class="product" data-cat="gear" data-tags="control gear" data-brand="playstation" data-name="يد تحكم DualSense لاسلكية">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/product-controller-cutout.webp" alt="يد تحكم DualSense">
+          </div>
+          <div class="product-info"><h3>يد تحكم DualSense لاسلكية</h3><p class="product-meta">PlayStation · لاسلكية</p><div class="price">95,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="يد تحكم DualSense" data-price="95000" data-img="assets/product-controller-cutout.webp">أضف للسلة</button>
+        </article>
+        <article class="product" data-cat="pc" data-tags="audio pc" data-brand="logitech" data-name="سماعة ألعاب لاسلكية Studio X">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/product-headset.webp" alt="سماعة ألعاب">
+          </div>
+          <div class="product-info"><h3>سماعة ألعاب لاسلكية Studio X</h3><p class="product-meta">صوت محيطي · للألعاب</p><div class="price">149,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="سماعة Studio X" data-price="149000" data-img="assets/product-headset.webp">أضف للسلة</button>
+        </article>
+        <article class="product is-cover" data-cat="games" data-tags="games" data-brand="playstation" data-name="Elden Ring Shadow of the Erdtree">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/cut-elden.jpg" alt="Elden Ring">
+          </div>
+          <div class="product-info"><h3>Elden Ring: Shadow of the Erdtree</h3><p class="product-meta">PS5 · مغامرة</p><div class="price">85,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="Elden Ring" data-price="85000" data-img="assets/cut-elden.jpg">أضف للسلة</button>
+        </article>
+        <article class="product" data-cat="pc" data-tags="keyboard pc" data-brand="logitech" data-name="لوحة مفاتيح ميكانيكية Pro">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/product-keyboard-cutout.webp" alt="لوحة مفاتيح ميكانيكية">
+          </div>
+          <div class="product-info"><h3>لوحة مفاتيح ميكانيكية Pro</h3><p class="product-meta">PC · ميكانيكية</p><div class="price">110,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="لوحة مفاتيح Pro" data-price="110000" data-img="assets/product-keyboard-cutout.webp">أضف للسلة</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="mosaic" aria-label="جلسات اللعب">
+      <figure><img src="assets/hero-modern-sofa.jpg" alt="شابة تلعب في غرفة حديثة"></figure>
+      <figure><img src="assets/hero-modern-pc.jpg" alt="شاب يلعب على حاسوب حديث"></figure>
+      <figure><img src="assets/hero-modern-together.jpg" alt="شاب وشابة يلعبان في غرفة معاصرة"></figure>
+    </section>
+
+    <section class="block catalog" id="recommended">
+      <div class="section-head">
+        <h2>مقترحة لك</h2>
+        <a class="view-all" href="#recommended" data-filter="all">عرض الكل <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></a>
+      </div>
+      <div class="product-grid">
+        <article class="product" data-cat="ps5" data-tags="ps5" data-brand="playstation" data-name="جهاز PlayStation 5 Slim">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/cut-ps5.png" alt="PlayStation 5">
+          </div>
+          <div class="product-info"><h3>جهاز PlayStation 5 Slim</h3><p class="product-meta">بلايستيشن 5</p><div class="price">725,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="PlayStation 5 Slim" data-price="725000" data-img="assets/cut-ps5.png">أضف للسلة</button>
+        </article>
+        <article class="product" data-cat="gear" data-tags="mouse gear" data-brand="razer" data-name="ماوس ألعاب لاسلكي Pro">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/product-mouse.webp" alt="ماوس ألعاب">
+          </div>
+          <div class="product-info"><h3>ماوس ألعاب لاسلكي Pro</h3><p class="product-meta">PC · لاسلكي</p><div class="price">75,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="ماوس ألعاب Pro" data-price="75000" data-img="assets/product-mouse.webp">أضف للسلة</button>
+        </article>
+        <article class="product is-cover" data-cat="games" data-tags="games" data-brand="playstation" data-name="God of War Ragnarök">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/product-god-of-war.jpg" alt="God of War Ragnarök">
+          </div>
+          <div class="product-info"><h3>God of War Ragnarök</h3><p class="product-meta">PS5 · أكشن</p><div class="price">68,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="God of War Ragnarök" data-price="68000" data-img="assets/product-god-of-war.jpg">أضف للسلة</button>
+        </article>
+        <article class="product" data-cat="gear" data-tags="audio gear" data-brand="logitech" data-name="مايكروفون ألعاب USB">
+          <div class="product-image">
+            <button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>
+            <img src="assets/product-microphone-cutout.webp" alt="مايكروفون ألعاب">
+          </div>
+          <div class="product-info"><h3>مايكروفون ألعاب USB</h3><p class="product-meta">بث · USB</p><div class="price">89,000 <small>د.ع</small></div></div>
+          <button class="add" type="button" data-title="مايكروفون ألعاب USB" data-price="89000" data-img="assets/product-microphone-cutout.webp">أضف للسلة</button>
+        </article>
+      </div>
+    </section>
+
+    <p class="empty" id="empty" hidden="">لا توجد منتجات مطابقة لبحثك.</p>
+    </div>
+
+    <section class="block cats-page" id="catsPage" hidden="">
+      <div class="section-head cats-head">
+        <div class="cats-title">
+          <h2>كل المنتجات</h2>
+          <button class="filter-open" id="filterOpen" type="button" aria-expanded="false" aria-controls="filterPanel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6.2 7.2V19l-3.6-2v-4.8L4 5Z"></path></svg>
+            <span>تصفية</span>
+            <b class="filter-badge" id="filterBadge" hidden=""></b>
+          </button>
+        </div>
+        <label class="sort-box">ترتيب
+          <select id="sortPick" aria-label="ترتيب المنتجات">
+            <option value="default">الافتراضي</option>
+            <option value="price-asc">السعر: من الأقل</option>
+            <option value="price-desc">السعر: من الأعلى</option>
+            <option value="name">الاسم</option>
+          </select>
+        </label>
+      </div>
+      <div class="filter-chips" id="filterChips" hidden=""></div>
+      <div class="filter-shade" id="filterShade"></div>
+      <div class="shop-layout">
+        <aside class="filter-panel" id="filterPanel">
+          <div class="filter-panel-head">
+            <strong>تصفية</strong>
+            <button class="filter-clear" id="filterClear" type="button" disabled="">مسح الكل</button>
+            <button class="filter-close" id="filterClose" type="button" aria-label="إغلاق">×</button>
+          </div>
+          <div class="filter-grid">
+          <section class="filter-group">
+            <h3>الماركة</h3>
+            <div class="filter-options">
+            <label class="filter-option"><input type="checkbox" data-brand-pick="playstation"><span>Sony</span><small data-count="playstation"></small></label>
+            <label class="filter-option"><input type="checkbox" data-brand-pick="razer"><span>Razer</span><small data-count="razer"></small></label>
+            <label class="filter-option"><input type="checkbox" data-brand-pick="logitech"><span>Logitech</span><small data-count="logitech"></small></label>
+            <label class="filter-option"><input type="checkbox" data-brand-pick="hyperx"><span>HyperX</span><small data-count="hyperx"></small></label>
+            <label class="filter-option"><input type="checkbox" data-brand-pick="steelseries"><span>SteelSeries</span><small data-count="steelseries"></small></label>
+            <label class="filter-option"><input type="checkbox" data-brand-pick="corsair"><span>Corsair</span><small data-count="corsair"></small></label>
+            </div>
+          </section>
+          <section class="filter-group">
+            <h3>التصنيف</h3>
+            <div class="filter-options">
+            <label class="filter-option"><input type="checkbox" data-cat-pick="ps5"><span>PlayStation</span><small data-count="ps5"></small></label>
+            <label class="filter-option"><input type="checkbox" data-cat-pick="pc"><span>أجهزة PC</span><small data-count="pc"></small></label>
+            <label class="filter-option"><input type="checkbox" data-cat-pick="audio"><span>الصوت</span><small data-count="audio"></small></label>
+            <label class="filter-option"><input type="checkbox" data-cat-pick="control"><span>التحكم</span><small data-count="control"></small></label>
+            <label class="filter-option"><input type="checkbox" data-cat-pick="games"><span>الألعاب</span><small data-count="games"></small></label>
+            <label class="filter-option"><input type="checkbox" data-cat-pick="keyboard"><span>الكيبورد</span><small data-count="keyboard"></small></label>
+            <label class="filter-option"><input type="checkbox" data-cat-pick="mouse"><span>الماوس</span><small data-count="mouse"></small></label>
+            </div>
+          </section>
+          <section class="filter-group">
+            <h3>السعر (د.ع)</h3>
+            <div class="price-presets">
+              <button type="button" data-min="" data-max="100000">أقل من 100,000</button>
+              <button type="button" data-min="100000" data-max="200000">100,000 – 200,000</button>
+              <button type="button" data-min="200000" data-max="">أكثر من 200,000</button>
+            </div>
+            <div class="price-fields">
+              <label>من<input id="priceMin" inputmode="numeric" placeholder="0" autocomplete="off"></label>
+              <label>إلى<input id="priceMax" inputmode="numeric" placeholder="0" autocomplete="off"></label>
+            </div>
+          </section>
+          </div>
+          <button class="filter-apply" id="filterApply" type="button">عرض النتائج</button>
+        </aside>
+        <div class="shop-results">
+          <p class="shop-meta" id="filterCount"></p>
+          <div id="catalog"></div>
+          <p class="empty" id="catEmpty" hidden="">لا توجد منتجات مطابقة.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block brands-page" id="brandsPage" hidden="">
+      <div id="brandList">
+        <div class="section-head"><h2>الماركات</h2></div>
+        <p class="brand-lead">اختر ماركة لتظهر منتجاتها.</p>
+        <div class="brand-grid">
+          <button class="brand-card" type="button" data-brand="playstation">
+            <i><img src="assets/PlayStation_logo.svg.webp" alt=""></i>
+            <span>Sony</span>
+          </button>
+          <button class="brand-card" type="button" data-brand="razer">
+            <i><img src="assets/razer.png" alt=""></i>
+            <span>Razer</span>
+          </button>
+          <button class="brand-card" type="button" data-brand="logitech">
+            <i><img src="assets/logitech.png" alt=""></i>
+            <span>Logitech</span>
+          </button>
+          <button class="brand-card" type="button" data-brand="hyperx">
+            <i><img src="assets/logo-hyperx.svg" alt=""></i>
+            <span>HyperX</span>
+          </button>
+          <button class="brand-card" type="button" data-brand="steelseries">
+            <i><img src="assets/logo-steelseries.svg" alt=""></i>
+            <span>SteelSeries</span>
+          </button>
+          <button class="brand-card" type="button" data-brand="corsair">
+            <i><img src="assets/logo-corsair.svg" alt=""></i>
+            <span>Corsair</span>
+          </button>
+        </div>
+      </div>
+      <div id="brandShop" hidden="">
+        <div class="section-head">
+          <h2 id="brandTitle"></h2>
+          <button class="view-all" id="brandBack" type="button">كل الماركات</button>
+        </div>
+        <div class="product-grid" id="brandProducts"></div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <a class="logo" href="#home"><img class="brand-logo" src="assets/logo-store.svg?v=2" alt="Games Online"></a>
+      <nav class="socials" aria-label="وسائل التواصل">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Zm8.2 3.2a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM12 8.2A3.8 3.8 0 1 0 12 15.8 3.8 3.8 0 0 0 12 8.2Z"></path></svg><span>إنستغرام</span></a>
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2A8.8 8.8 0 0 0 4.4 16.7L3.2 21l4.4-1.1A8.8 8.8 0 1 0 12 3.2Zm4.2 12.2c-.2.5-1 .9-1.4 1-.4 0-.8.1-2.6-.6-2.2-.9-3.6-3.1-3.7-3.2-.1-.2-.9-1.2-.9-2.4s.6-1.7.8-1.9c.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .4.3.2.5.6 1.5.6 1.6s0 .3-.2.4l-.3.4c-.1.1-.2.2 0 .4.1.3.6 1.1 1.5 1.8 1 .8 1.8 1.1 2.1 1.2.3.1.4 0 .5-.1l.5-.6c.1-.2.3-.1.5 0l1.5.7c.2.1.3.2.4.3 0 .3-.1.7-.2 1.1Z"></path></svg><span>واتساب</span></a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5h2.3a4.8 4.8 0 0 0 3.4 3.3v2.4a7 7 0 0 1-3.4-1.1v6.4a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.5a3.3 3.3 0 1 0 2.5 3.2V3.5Z"></path></svg><span>تيك توك</span></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4V10c0-.6.4-1 1-1Z"></path></svg><span>فيسبوك</span></a>
+      </nav>
+      <nav class="footer-links" aria-label="أسفل الصفحة">
+        <a href="#home">الرئيسية</a>
+        <a href="#categories">كل المنتجات</a>
+        <a href="#brands">الماركات</a>
+      </nav>
+    </footer>
+    <div class="legal">
+      <span>© 2026 GAME ONLINE. جميع الحقوق محفوظة.</span>
+    </div>
+  </div>
+</main>
+
+<div class="drawer-shade" id="shade"></div>
+<aside class="cart-drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><h2>سلة المشتريات <span id="drawerCount">(0)</span></h2><button class="drawer-close" id="closeCart" type="button" aria-label="إغلاق">×</button></div>
+  <div class="cart-list" id="cartList"><p class="cart-empty">سلتك فارغة حالياً.</p></div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>المجموع</span><b id="cartTotal">0 د.ع</b></div>
+    <button class="checkout" id="checkout" type="button" disabled="">إتمام الطلب</button>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const shelves=[
+  {id:'playstation',title:'Sony · PlayStation',products:[
+    {title:'يد تحكم DualSense لاسلكية',name:'DualSense Sony PlayStation',meta:'Sony · لاسلكية',cat:'gear',tags:'control gear',img:'assets/product-controller-cutout.webp',alt:'يد تحكم DualSense',price:95000,cart:'يد تحكم DualSense'},
+    {title:'يد تحكم DualSense Edge',name:'DualSense Edge Sony',meta:'Sony · احترافية',cat:'gear',tags:'control gear',img:'assets/product-controller-alt.jpg',alt:'DualSense Edge',price:210000,cart:'DualSense Edge'},
+    {title:'جهاز PlayStation 5 Slim',name:'PS5 Slim Sony',meta:'Sony · بلايستيشن 5',cat:'ps5',tags:'ps5',img:'assets/cut-ps5.png',alt:'PlayStation 5',price:725000,cart:'PlayStation 5 Slim'},
+    {title:'PlayStation 5 Digital',name:'PS5 Digital Sony',meta:'Sony · نسخة رقمية',cat:'ps5',tags:'ps5',img:'assets/product-ps5.png',alt:'PS5 Digital',price:640000,cart:'PS5 Digital'},
+    {title:'سماعة Pulse 3D',name:'Pulse 3D Sony',meta:'Sony · صوت محيطي',cat:'gear',tags:'audio gear',img:'assets/product-headset.webp',alt:'سماعة Pulse 3D',price:115000,cart:'سماعة Pulse 3D'},
+    {title:'Elden Ring: Shadow of the Erdtree',name:'Elden Ring Sony PS5',meta:'Sony · PS5 · مغامرة',cat:'games',tags:'games',img:'assets/cut-elden.jpg',alt:'Elden Ring',price:85000,cart:'Elden Ring',cover:true},
+    {title:'God of War Ragnarök',name:'God of War Sony PS5',meta:'Sony · PS5 · أكشن',cat:'games',tags:'games',img:'assets/product-god-of-war.jpg',alt:'God of War Ragnarök',price:68000,cart:'God of War Ragnarök',cover:true}
+  ]},
+  {id:'razer',title:'Razer',products:[
+    {title:'ماوس Razer Basilisk V3',name:'Razer Basilisk mouse',meta:'Razer · لاسلكي',cat:'gear',tags:'mouse gear',img:'assets/product-mouse.webp',alt:'ماوس Razer Basilisk',price:89000,cart:'Razer Basilisk V3'},
+    {title:'ماوس Razer DeathAdder V3',name:'Razer DeathAdder mouse',meta:'Razer · سلكي',cat:'gear',tags:'mouse gear',img:'assets/product-mouse.webp',alt:'ماوس Razer DeathAdder',price:99000,cart:'Razer DeathAdder V3'},
+    {title:'لوحة Razer BlackWidow V4',name:'Razer BlackWidow keyboard',meta:'Razer · ميكانيكية',cat:'pc',tags:'keyboard pc',img:'assets/product-keyboard-cutout.webp',alt:'لوحة Razer BlackWidow',price:165000,cart:'Razer BlackWidow V4'},
+    {title:'سماعة Razer Kraken V3',name:'Razer Kraken headset',meta:'Razer · صوت محيطي',cat:'pc',tags:'audio pc',img:'assets/product-headset.webp',alt:'سماعة Razer Kraken',price:135000,cart:'Razer Kraken V3'},
+    {title:'مايكروفون Razer Seiren Mini',name:'Razer Seiren mic',meta:'Razer · USB',cat:'gear',tags:'audio gear',img:'assets/product-microphone-cutout.webp',alt:'مايكروفون Razer',price:79000,cart:'Razer Seiren Mini'}
+  ]},
+  {id:'logitech',title:'Logitech',products:[
+    {title:'سماعة Logitech G733',name:'Logitech G733 headset',meta:'Logitech · لاسلكية',cat:'pc',tags:'audio pc',img:'assets/product-headset.webp',alt:'سماعة Logitech G733',price:149000,cart:'Logitech G733'},
+    {title:'لوحة Logitech G Pro',name:'Logitech G Pro keyboard',meta:'Logitech · ميكانيكية',cat:'pc',tags:'keyboard pc',img:'assets/product-keyboard-cutout.webp',alt:'لوحة Logitech G Pro',price:110000,cart:'Logitech G Pro'},
+    {title:'لوحة Logitech G915',name:'Logitech G915 keyboard',meta:'Logitech · لاسلكية',cat:'pc',tags:'keyboard pc',img:'assets/product-keyboard.webp',alt:'لوحة Logitech G915',price:240000,cart:'Logitech G915'},
+    {title:'ماوس Logitech G502',name:'Logitech G502 mouse',meta:'Logitech · لاسلكي',cat:'gear',tags:'mouse gear',img:'assets/product-mouse.webp',alt:'ماوس Logitech G502',price:82000,cart:'Logitech G502'},
+    {title:'مايكروفون Logitech Blue Yeti',name:'Logitech Blue Yeti mic',meta:'Logitech · USB',cat:'gear',tags:'audio gear',img:'assets/product-microphone.webp',alt:'مايكروفون Logitech',price:89000,cart:'Logitech Blue Yeti'}
+  ]},
+  {id:'hyperx',title:'HyperX',products:[
+    {title:'سماعة HyperX Cloud II',name:'HyperX Cloud headset',meta:'HyperX · صوت محيطي',cat:'pc',tags:'audio pc',img:'assets/product-headset.webp',alt:'سماعة HyperX Cloud',price:125000,cart:'HyperX Cloud II'},
+    {title:'لوحة HyperX Alloy Origins',name:'HyperX Alloy keyboard',meta:'HyperX · ميكانيكية',cat:'pc',tags:'keyboard pc',img:'assets/product-keyboard.webp',alt:'لوحة HyperX Alloy',price:140000,cart:'HyperX Alloy Origins'},
+    {title:'ماوس HyperX Pulsefire',name:'HyperX Pulsefire mouse',meta:'HyperX · سلكي',cat:'gear',tags:'mouse gear',img:'assets/product-mouse.webp',alt:'ماوس HyperX Pulsefire',price:70000,cart:'HyperX Pulsefire'}
+  ]},
+  {id:'steelseries',title:'SteelSeries',products:[
+    {title:'سماعة SteelSeries Arctis Nova',name:'SteelSeries Arctis headset',meta:'SteelSeries · لاسلكية',cat:'pc',tags:'audio pc',img:'assets/product-headset.webp',alt:'سماعة SteelSeries Arctis',price:160000,cart:'SteelSeries Arctis Nova'},
+    {title:'ماوس SteelSeries Rival 5',name:'SteelSeries Rival mouse',meta:'SteelSeries · سلكي',cat:'gear',tags:'mouse gear',img:'assets/product-mouse.webp',alt:'ماوس SteelSeries Rival',price:72000,cart:'SteelSeries Rival 5'}
+  ]},
+  {id:'corsair',title:'Corsair',products:[
+    {title:'لوحة Corsair K70',name:'Corsair K70 keyboard',meta:'Corsair · ميكانيكية',cat:'pc',tags:'keyboard pc',img:'assets/product-keyboard-cutout.webp',alt:'لوحة Corsair K70',price:175000,cart:'Corsair K70'},
+    {title:'سماعة Corsair HS80',name:'Corsair HS80 headset',meta:'Corsair · لاسلكية',cat:'pc',tags:'audio pc',img:'assets/product-headset.webp',alt:'سماعة Corsair HS80',price:145000,cart:'Corsair HS80'}
+  ]}
+];
+const heartBtn='<button class="favorite" type="button" aria-label="إضافة للمفضلة" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20Z"></path></svg></button>';
+let catalogOrder=0;
+$('#catalog').innerHTML=`<div class="product-grid">${shelves.flatMap(shelf=>shelf.products.map(item=>{
+  const price=new Intl.NumberFormat('en-US').format(item.price);
+  return `<article class="product${item.cover?' is-cover':''}" data-order="${catalogOrder++}" data-price="${item.price}" data-cat="${item.cat}" data-tags="${item.tags}" data-brand="${shelf.id}" data-name="${item.name}"><div class="product-image">${heartBtn}<img src="${item.img}" alt="${item.alt}"></div><div class="product-info"><h3>${item.title}</h3><p class="product-meta">${item.meta}</p><div class="price">${price} <small>د.ع</small></div></div><button class="add" type="button" data-title="${item.cart}" data-price="${item.price}" data-img="${item.img}">أضف للسلة</button></article>`;
+})).join('')}</div>`;
+let cart=[];
+let category='all';
+const drawer=$('#drawer');
+const shade=$('#shade');
+const toast=$('#toast');
+const favs=new Set();
+
+function say(message){
+  toast.textContent=message;
+  toast.classList.add('show');
+  clearTimeout(say._t);
+  say._t=setTimeout(()=>toast.classList.remove('show'),2200);
+}
+function openCart(){
+  drawer.classList.add('open');
+  shade.classList.add('show');
+  drawer.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeCart(){
+  drawer.classList.remove('open');
+  shade.classList.remove('show');
+  drawer.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+function fmt(n){return new Intl.NumberFormat('en-US').format(n)}
+function renderCart(animate){
+  const count=cart.reduce((sum,item)=>sum+item.qty,0);
+  const total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
+  const countEl=$('#cartCount');
+  countEl.textContent=count;
+  if(animate){countEl.classList.remove('pop');void countEl.offsetWidth;countEl.classList.add('pop')}
+  $('#drawerCount').textContent=`(${fmt(count)})`;
+  $('#cartTotal').textContent=`${fmt(total)} د.ع`;
+  $('#cartOpen').setAttribute('aria-label',`فتح السلة، ${fmt(count)} من المنتجات`);
+  $('#checkout').disabled=cart.length===0;
+  $('#cartList').innerHTML=cart.length
+    ? cart.map((item,index)=>`<div class="cart-row"><img src="${item.img}" alt=""><div><strong>${item.title}</strong><small>${fmt(item.price)} د.ع · العدد ${fmt(item.qty)}</small></div><button type="button" data-remove="${index}" aria-label="حذف ${item.title}">×</button></div>`).join('')
+    : '<p class="cart-empty">سلتك فارغة حالياً.</p>';
+}
+function closeMenu(){
+  $('#menuList').hidden=true;
+  $('#menuBtn').setAttribute('aria-expanded','false');
+}
+function fold(value){
+  return (value||'')
+    .toLowerCase()
+    .replace(/[أإآٱ]/g,'ا')
+    .replace(/ة/g,'ه')
+    .replace(/ى/g,'ي')
+    .replace(/[ً-ْٰ]/g,'')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+const searchAliases={
+  ps5:'playstation بلايستيشن بلاي ستيشن سوني',
+  pc:'كمبيوتر بيسي حاسوب',
+  audio:'صوت هيدفون',
+  control:'يد تحكم ذراع',
+  games:'لعبة العاب',
+  keyboard:'كيبورد لوحة',
+  mouse:'ماوس فاره'
+};
+let suggestIndex=-1;
+function productHay(product){
+  const tags=`${product.dataset.cat||''} ${product.dataset.tags||''}`;
+  const extra=tags.split(/\s+/).map(tag=>searchAliases[tag]||'').join(' ');
+  let hay=fold(`${product.dataset.name||''} ${product.textContent} ${extra}`);
+  if(hay.includes('playstation')||hay.includes('ps5'))hay+=' بلايستيشن بلاي ستيشن';
+  return hay;
+}
+function queryMatches(hay,query){
+  if(!query)return true;
+  const folded=fold(query);
+  if(hay.includes(folded))return true;
+  return folded.split(' ').every(word=>word&&hay.includes(word));
+}
+function productMatches(product,query){
+  const tags=`${product.dataset.cat||''} ${product.dataset.tags||''}`.toLowerCase().split(/\s+/);
+  const categoryOk=category==='all'||tags.includes(category);
+  return categoryOk&&queryMatches(productHay(product),query);
+}
+function matchingProducts(query){
+  return $$('#storeView .product').filter(product=>productMatches(product,query));
+}
+function matchingAny(query){
+  return [...$$('#storeView .product'),...$$('#catalog .product')].filter(product=>productMatches(product,query));
+}
+function hideSuggest(){
+  $('#searchList').hidden=true;
+  $('#search').setAttribute('aria-expanded','false');
+  suggestIndex=-1;
+}
+function renderSuggest(query){
+  const list=$('#searchList');
+  const found=query?matchingAny(query).slice(0,6):[];
+  if(!query){hideSuggest();return}
+  suggestIndex=found.length?Math.min(suggestIndex,found.length-1):-1;
+  list.innerHTML=found.length
+    ? found.map((product,index)=>{
+        const title=product.querySelector('h3').textContent;
+        const meta=product.querySelector('.product-meta').textContent;
+        const price=product.querySelector('.price').childNodes[0].textContent.trim();
+        const img=product.querySelector('img').getAttribute('src');
+        return `<button type="button" role="option" data-pick="${index}" ${index===suggestIndex?'class="is-on" aria-selected="true"':'aria-selected="false"'}><img src="${img}" alt=""><span><strong>${title}</strong><small>${meta}</small></span><b>${price}</b></button>`;
+      }).join('')
+    : '<p class="search-none">لا توجد نتائج لهذا البحث</p>';
+  list.hidden=false;
+  $('#search').setAttribute('aria-expanded','true');
+  list._found=found;
+}
+function pickSuggest(product){
+  hideSuggest();
+  if(!$('#storeView').contains(product))openCats();
+  product.scrollIntoView({behavior:'smooth',block:'center'});
+  $$('.product').forEach(item=>item.classList.remove('is-hit'));
+  product.classList.add('is-hit');
+  clearTimeout(pickSuggest._t);
+  pickSuggest._t=setTimeout(()=>product.classList.remove('is-hit'),1400);
+}
+function filter(){
+  const query=$('#search').value.trim();
+  $('#searchClear').hidden=!query;
+  const found=matchingProducts(query);
+  $$('#storeView .product').forEach(product=>{product.hidden=!found.includes(product)});
+  $$('#storeView .catalog').forEach(section=>{
+    section.hidden=![...section.querySelectorAll('.product')].some(product=>!product.hidden);
+  });
+  $('#empty').hidden=found.length!==0;
+  $('#empty').textContent=query?`لا توجد منتجات مطابقة لـ «${query}»`:'لا توجد منتجات مطابقة لبحثك.';
+}
+
+$('#cartOpen').addEventListener('click',openCart);
+$('#closeCart').addEventListener('click',closeCart);
+shade.addEventListener('click',closeCart);
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'){closeCart();closeMenu();hideSuggest();closeFilterDrawer()}
+});
+$$('.add').forEach(button=>button.addEventListener('click',()=>{
+  const item={title:button.dataset.title,price:+button.dataset.price,img:button.dataset.img,qty:1};
+  const existing=cart.find(entry=>entry.title===item.title);
+  existing?existing.qty++:cart.push(item);
+  renderCart(true);
+  button.classList.add('done');
+  const previous=button.textContent;
+  button.textContent='تمت الإضافة';
+  setTimeout(()=>{button.textContent=previous;button.classList.remove('done')},700);
+  say('أُضيف المنتج إلى السلة');
+}));
+$('#cartList').addEventListener('click',event=>{
+  const index=event.target.dataset.remove;
+  if(index===undefined)return;
+  cart.splice(+index,1);
+  renderCart(true);
+});
+$('#checkout').addEventListener('click',()=>{if(cart.length)say('سيتم تأكيد الطلب عند ربط المتجر')});
+$('#favOpen').addEventListener('click',()=>say(favs.size?`لديك ${fmt(favs.size)} في المفضلة`:'لا توجد منتجات في المفضلة بعد'));
+$$('.favorite').forEach(button=>button.addEventListener('click',()=>{
+  const name=button.closest('.product').dataset.name;
+  const loved=!button.classList.contains('loved');
+  button.classList.toggle('loved',loved);
+  button.setAttribute('aria-pressed',loved?'true':'false');
+  loved?favs.add(name):favs.delete(name);
+  say(loved?'أُضيف إلى المفضلة':'أُزيل من المفضلة');
+}));
+$('#search').addEventListener('input',()=>{
+  if($('#storeView').hidden)openStore();
+  suggestIndex=-1;
+  filter();
+  renderSuggest($('#search').value.trim());
+});
+$('#search').addEventListener('focus',()=>{if($('#search').value.trim())renderSuggest($('#search').value.trim())});
+$('#searchClear').addEventListener('click',()=>{
+  $('#search').value='';
+  suggestIndex=-1;
+  filter();
+  $('#search').focus();
+});
+$('#search').addEventListener('keydown',event=>{
+  const options=$$('#searchList [role="option"]');
+  if(event.key==='ArrowDown'||event.key==='ArrowUp'){
+    if(!options.length)return;
+    event.preventDefault();
+    suggestIndex=event.key==='ArrowDown'
+      ? (suggestIndex+1)%options.length
+      : (suggestIndex-1+options.length)%options.length;
+    renderSuggest($('#search').value.trim());
+  }
+  if(event.key==='Enter'&&suggestIndex>=0&&$('#searchList')._found){
+    event.preventDefault();
+    pickSuggest($('#searchList')._found[suggestIndex]);
+  }
+});
+$('#searchList').addEventListener('click',event=>{
+  const option=event.target.closest('[data-pick]');
+  if(!option)return;
+  pickSuggest($('#searchList')._found[+option.dataset.pick]);
+});
+document.addEventListener('click',event=>{
+  if(!event.target.closest('.search'))hideSuggest();
+});
+$('#searchForm').addEventListener('submit',event=>{
+  event.preventDefault();
+  if(suggestIndex>=0&&$('#searchList')._found){
+    pickSuggest($('#searchList')._found[suggestIndex]);
+    return;
+  }
+  hideSuggest();
+  filter();
+  const first=matchingAny($('#search').value.trim())[0];
+  (first||$('#trending')).scrollIntoView({behavior:'smooth',block:first?'center':'start'});
+  if(first)pickSuggest(first);
+});
+$$('[data-filter]').forEach(link=>link.addEventListener('click',()=>{
+  if($('#storeView').hidden)openStore();
+  category=link.dataset.filter==='all'?'all':link.dataset.filter;
+  $$('[data-filter]').forEach(item=>item.classList.toggle('active',category!=='all'&&item.dataset.filter===category));
+  filter();
+  closeMenu();
+  if(link.tagName==='BUTTON')$('#trending').scrollIntoView({behavior:'smooth',block:'start'});
+}));
+$('#menuBtn').addEventListener('click',()=>{
+  const open=$('#menuList').hidden;
+  $('#menuList').hidden=!open;
+  $('#menuBtn').setAttribute('aria-expanded',open?'true':'false');
+});
+document.addEventListener('click',event=>{
+  if(!$('#menu').contains(event.target))closeMenu();
+});
+$$('.footer-links a').forEach(link=>link.addEventListener('click',event=>{
+  const href=link.getAttribute('href');
+  if(href==='#brands'){event.preventDefault();openBrands()}
+  if(href==='#categories'){event.preventDefault();openCats()}
+}));
+$$('.nav-links a').forEach(link=>link.addEventListener('click',event=>{
+  $$('.nav-links a').forEach(item=>item.classList.toggle('active',item===link));
+  const href=link.getAttribute('href');
+  if(href==='#brands'){
+    event.preventDefault();
+    openBrands();
+    return;
+  }
+  if(href==='#categories'){
+    event.preventDefault();
+    openCats();
+    return;
+  }
+  openStore();
+}));
+$$('a[href="#home"]').forEach(link=>link.addEventListener('click',()=>{
+  openStore();
+  category='all';
+  $$('[data-filter]').forEach(item=>item.classList.remove('active'));
+  filter();
+}));
+
+const productHome=new Map($$('#catalog .product').map(product=>[product,product.parentElement]));
+const brandNames={playstation:'Sony · PlayStation',razer:'Razer',logitech:'Logitech',hyperx:'HyperX',steelseries:'SteelSeries',corsair:'Corsair'};
+function restoreProducts(){
+  productHome.forEach((parent,product)=>parent.appendChild(product));
+}
+const brandPicks=new Set();
+const catPicks=new Set();
+const brandLabels={playstation:'Sony',razer:'Razer',logitech:'Logitech',hyperx:'HyperX',steelseries:'SteelSeries',corsair:'Corsair'};
+const catLabels={ps5:'PlayStation',pc:'أجهزة PC',audio:'الصوت',control:'التحكم',games:'الألعاب',keyboard:'الكيبورد',mouse:'الماوس'};
+const sortLabels={'price-asc':'السعر: من الأقل','price-desc':'السعر: من الأعلى',name:'الاسم'};
+function closeFilterDrawer(){
+  $('#filterPanel').classList.remove('is-open');
+  $('#filterOpen').setAttribute('aria-expanded','false');
+}
+function productTags(product){
+  return `${product.dataset.cat||''} ${product.dataset.tags||''}`.toLowerCase().split(/\s+/);
+}
+function readBound(input){
+  const digits=input.value.replace(/[^\d]/g,'');
+  return digits===''?null:+digits;
+}
+function priceBounds(){
+  let min=readBound($('#priceMin'));
+  let max=readBound($('#priceMax'));
+  if(min!=null&&max!=null&&min>max){const swap=min;min=max;max=swap}
+  return {min,max};
+}
+function passes(product,brands,cats,bounds){
+  if(brands.size&&!brands.has(product.dataset.brand))return false;
+  if(cats.size&&![...cats].some(cat=>productTags(product).includes(cat)))return false;
+  const price=+product.dataset.price;
+  if(bounds.min!=null&&price<bounds.min)return false;
+  if(bounds.max!=null&&price>bounds.max)return false;
+  return true;
+}
+function countLabel(n){
+  if(n===0)return 'لا توجد منتجات';
+  if(n===1)return 'منتج واحد';
+  if(n===2)return 'منتجان';
+  if(n<=10)return `${fmt(n)} منتجات`;
+  return `${fmt(n)} منتج`;
+}
+function resetCatalogFilters(){
+  brandPicks.clear();
+  catPicks.clear();
+  $('#priceMin').value='';
+  $('#priceMax').value='';
+  $('#sortPick').value='default';
+  $$('#filterPanel input').forEach(input=>{input.checked=false});
+}
+function applyCats(){
+  const bounds=priceBounds();
+  const sort=$('#sortPick').value;
+  const products=$$('#catalog .product');
+  let shown=0;
+  products.forEach(product=>{
+    const ok=passes(product,brandPicks,catPicks,bounds);
+    product.hidden=!ok;
+    if(ok)shown++;
+  });
+  const grid=$('#catalog .product-grid');
+  [...products].sort((a,b)=>{
+    if(sort==='price-asc')return +a.dataset.price-+b.dataset.price;
+    if(sort==='price-desc')return +b.dataset.price-+a.dataset.price;
+    if(sort==='name')return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent,'ar');
+    return +a.dataset.order-+b.dataset.order;
+  }).forEach(product=>grid.appendChild(product));
+  $$('#filterPanel [data-brand-pick]').forEach(input=>{
+    const count=products.filter(product=>passes(product,new Set([input.dataset.brandPick]),catPicks,bounds)).length;
+    input.closest('.filter-option').querySelector('small').textContent=fmt(count);
+    const off=count===0&&!input.checked;
+    input.disabled=off;
+    input.closest('.filter-option').classList.toggle('is-off',off);
+  });
+  $$('#filterPanel [data-cat-pick]').forEach(input=>{
+    const count=products.filter(product=>passes(product,brandPicks,new Set([input.dataset.catPick]),bounds)).length;
+    input.closest('.filter-option').querySelector('small').textContent=fmt(count);
+    const off=count===0&&!input.checked;
+    input.disabled=off;
+    input.closest('.filter-option').classList.toggle('is-off',off);
+  });
+  $$('.price-presets button').forEach(button=>{
+    const min=button.dataset.min===''?null:+button.dataset.min;
+    const max=button.dataset.max===''?null:+button.dataset.max;
+    button.classList.toggle('active',min===bounds.min&&max===bounds.max);
+  });
+  const chips=[];
+  brandPicks.forEach(id=>chips.push(`<button class="chip" type="button" data-chip="brand" data-value="${id}">${brandLabels[id]} <b aria-hidden="true">×</b></button>`));
+  catPicks.forEach(id=>chips.push(`<button class="chip" type="button" data-chip="cat" data-value="${id}">${catLabels[id]} <b aria-hidden="true">×</b></button>`));
+  if(bounds.min!=null||bounds.max!=null){
+    const text=bounds.min!=null&&bounds.max!=null?`${fmt(bounds.min)} – ${fmt(bounds.max)}`:bounds.min!=null?`من ${fmt(bounds.min)}`:`حتى ${fmt(bounds.max)}`;
+    chips.push(`<button class="chip" type="button" data-chip="price">${text} د.ع <b aria-hidden="true">×</b></button>`);
+  }
+  if(sort!=='default')chips.push(`<button class="chip" type="button" data-chip="sort">${sortLabels[sort]} <b aria-hidden="true">×</b></button>`);
+  const box=$('#filterChips');
+  box.hidden=chips.length===0;
+  box.innerHTML=chips.length?`${chips.join('')}<button class="chip-clear" type="button" data-chip="clear">مسح الكل</button>`:'';
+  const active=brandPicks.size+catPicks.size+((bounds.min!=null||bounds.max!=null)?1:0);
+  $('#filterBadge').hidden=active===0;
+  $('#filterBadge').textContent=fmt(active);
+  $('#filterOpen').classList.toggle('is-on',active>0);
+  $('#filterClear').disabled=active===0&&sort==='default';
+  $('#filterCount').textContent=countLabel(shown);
+  $('#filterApply').textContent=shown?`عرض النتائج (${fmt(shown)})`:'لا توجد نتائج';
+  $('#catEmpty').hidden=shown!==0;
+}
+function openStore(){
+  closeFilterDrawer();
+  restoreProducts();
+  $('#brandsPage').hidden=true;
+  $('#catsPage').hidden=true;
+  $('#storeView').hidden=false;
+  $('#brandList').hidden=false;
+  $('#brandShop').hidden=true;
+  filter();
+}
+function openBrands(){
+  closeFilterDrawer();
+  restoreProducts();
+  $('#storeView').hidden=true;
+  $('#catsPage').hidden=true;
+  $('#brandsPage').hidden=false;
+  $('#brandList').hidden=false;
+  $('#brandShop').hidden=true;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function openCats(){
+  restoreProducts();
+  $('#storeView').hidden=true;
+  $('#brandsPage').hidden=true;
+  $('#catsPage').hidden=false;
+  resetCatalogFilters();
+  closeFilterDrawer();
+  applyCats();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function readChecks(){
+  brandPicks.clear();
+  catPicks.clear();
+  $$('#filterPanel [data-brand-pick]:checked').forEach(input=>brandPicks.add(input.dataset.brandPick));
+  $$('#filterPanel [data-cat-pick]:checked').forEach(input=>catPicks.add(input.dataset.catPick));
+}
+$('#filterPanel').addEventListener('change',event=>{
+  if(!event.target.matches('input'))return;
+  readChecks();
+  applyCats();
+});
+$('#priceMin').addEventListener('input',applyCats);
+$('#priceMax').addEventListener('input',applyCats);
+$('#sortPick').addEventListener('change',applyCats);
+$$('.price-presets button').forEach(button=>button.addEventListener('click',()=>{
+  $('#priceMin').value=button.dataset.min;
+  $('#priceMax').value=button.dataset.max;
+  applyCats();
+}));
+$('#filterChips').addEventListener('click',event=>{
+  const chip=event.target.closest('[data-chip]');
+  if(!chip)return;
+  if(chip.dataset.chip==='clear'){resetCatalogFilters();applyCats();return}
+  if(chip.dataset.chip==='brand'){
+    brandPicks.delete(chip.dataset.value);
+    $(`#filterPanel [data-brand-pick="${chip.dataset.value}"]`).checked=false;
+  }
+  if(chip.dataset.chip==='cat'){
+    catPicks.delete(chip.dataset.value);
+    $(`#filterPanel [data-cat-pick="${chip.dataset.value}"]`).checked=false;
+  }
+  if(chip.dataset.chip==='price'){$('#priceMin').value='';$('#priceMax').value=''}
+  if(chip.dataset.chip==='sort')$('#sortPick').value='default';
+  applyCats();
+});
+$('#filterClear').addEventListener('click',()=>{resetCatalogFilters();applyCats()});
+$('#filterOpen').addEventListener('click',()=>{
+  const open=!$('#filterPanel').classList.contains('is-open');
+  $('#filterPanel').classList.toggle('is-open',open);
+  $('#filterOpen').setAttribute('aria-expanded',open?'true':'false');
+  if(open)$('#filterPanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+$('#filterClose').addEventListener('click',closeFilterDrawer);
+$('#filterApply').addEventListener('click',closeFilterDrawer);
+$('#filterShade').addEventListener('click',closeFilterDrawer);
+function showBrand(id){
+  restoreProducts();
+  const box=$('#brandProducts');
+  $$('#catalog .product').forEach(product=>{
+    if(product.dataset.brand!==id)return;
+    product.hidden=false;
+    box.appendChild(product);
+  });
+  $('#brandTitle').textContent=brandNames[id];
+  $('#brandList').hidden=true;
+  $('#brandShop').hidden=false;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$$('.brand-card').forEach(card=>card.addEventListener('click',()=>showBrand(card.dataset.brand)));
+$('#brandBack').addEventListener('click',()=>{
+  restoreProducts();
+  filter();
+  $('#brandShop').hidden=true;
+  $('#brandList').hidden=false;
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+const onScroll=()=>$('#siteHeader').classList.toggle('scrolled',window.scrollY>8);
+document.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+renderCart(false);
+
+const heroFlip=$('#heroFlip');
+const flipCards=[...heroFlip.querySelectorAll('.flip-card')];
+const flipDots=[...$('#flipDots').querySelectorAll('button')];
+let flipIndex=0;
+let flipTimer;
+let flipPaused=false;
+let flipMoving=false;
+function showFlip(next,dir){
+  const count=flipCards.length;
+  const target=(next+count)%count;
+  if(target===flipIndex||flipMoving)return;
+  const current=flipCards[flipIndex];
+  const incoming=flipCards[target];
+  flipDots[flipIndex].setAttribute('aria-selected','false');
+  flipDots[target].setAttribute('aria-selected','true');
+  const settle=()=>{
+    current.classList.remove('is-on');
+    current.setAttribute('aria-hidden','true');
+    incoming.classList.add('is-on');
+    incoming.setAttribute('aria-hidden','false');
+    current.style.cssText='';
+    incoming.style.cssText='';
+    flipIndex=target;
+    flipMoving=false;
+  };
+  flipMoving=true;
+  const sign=dir<0?-1:1;
+  incoming.style.zIndex='2';
+  current.style.zIndex='1';
+  const duration=1250;
+  let started=0;
+  const frame=now=>{
+    if(!started)started=now;
+    const t=Math.min(1,(now-started)/duration);
+    const glide=1-Math.pow(1-t,3);
+    const fade=Math.min(1,t/0.7);
+    current.style.transform=`translate3d(${(-sign*22*glide).toFixed(2)}%,0,0)`;
+    current.style.opacity=String(1-fade);
+    incoming.style.transform=`translate3d(${(sign*34*(1-glide)).toFixed(2)}%,0,0) scale(${(1.06-0.06*glide).toFixed(4)})`;
+    incoming.style.opacity=String(fade);
+    if(t<1){requestAnimationFrame(frame);return}
+    settle();
+  };
+  requestAnimationFrame(frame);
+}
+function armFlip(){
+  clearInterval(flipTimer);
+  if(flipPaused||document.hidden)return;
+  flipTimer=setInterval(()=>showFlip(flipIndex+1,1),5600);
+}
+$('#flipNext').addEventListener('click',()=>{showFlip(flipIndex+1,1);armFlip()});
+$('#flipPrev').addEventListener('click',()=>{showFlip(flipIndex-1,-1);armFlip()});
+flipDots.forEach((dot,dotIndex)=>dot.addEventListener('click',()=>{
+  showFlip(dotIndex,dotIndex>=flipIndex?1:-1);
+  armFlip();
+}));
+heroFlip.addEventListener('mouseenter',()=>{flipPaused=true;armFlip()});
+heroFlip.addEventListener('mouseleave',()=>{flipPaused=false;armFlip()});
+heroFlip.addEventListener('focusin',()=>{flipPaused=true;armFlip()});
+heroFlip.addEventListener('focusout',event=>{
+  if(heroFlip.contains(event.relatedTarget))return;
+  flipPaused=false;
+  armFlip();
+});
+heroFlip.addEventListener('keydown',event=>{
+  if(event.key==='ArrowLeft'){event.preventDefault();showFlip(flipIndex+1,1);armFlip()}
+  if(event.key==='ArrowRight'){event.preventDefault();showFlip(flipIndex-1,-1);armFlip()}
+});
+let flipStartX=null;
+heroFlip.addEventListener('pointerdown',event=>{
+  if(event.target.closest('button'))return;
+  flipStartX=event.clientX;
+});
+heroFlip.addEventListener('pointerup',event=>{
+  if(flipStartX==null)return;
+  const delta=event.clientX-flipStartX;
+  flipStartX=null;
+  if(Math.abs(delta)<48)return;
+  showFlip(flipIndex+(delta<0?1:-1),delta<0?1:-1);
+  armFlip();
+});
+document.addEventListener('visibilitychange',armFlip);
+armFlip();
+
+const catMQ=matchMedia('(max-width:900px)');
+function bindCatScroller(root){
+  const track=root.querySelector('.bubbles');
+  const items=[...track.querySelectorAll('.bubble')];
+  const prev=root.querySelector('.cat-prev');
+  const next=root.querySelector('.cat-next');
+  function catEdge(){
+    const box=track.getBoundingClientRect();
+    const pad=parseFloat(getComputedStyle(track).scrollPaddingInlineStart)||0;
+    const rtl=getComputedStyle(track).direction==='rtl';
+    return {rtl,edge:rtl?box.right-pad:box.left+pad};
+  }
+  function currentCat(){
+    const {rtl,edge}=catEdge();
+    let best=0,dist=Infinity;
+    items.forEach((item,index)=>{
+      const box=item.getBoundingClientRect();
+      const point=rtl?box.right:box.left;
+      const delta=Math.abs(point-edge);
+      if(delta<dist){dist=delta;best=index}
+    });
+    return best;
+  }
+  function moveCat(dir){
+    if(!catMQ.matches)return;
+    const index=Math.max(0,Math.min(items.length-1,currentCat()+dir));
+    const item=items[index];
+    const {rtl,edge}=catEdge();
+    const box=item.getBoundingClientRect();
+    const delta=(rtl?box.right:box.left)-edge;
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    track.scrollBy({left:delta,behavior:reduce?'auto':'smooth'});
+  }
+  function syncCatArrows(){
+    if(!catMQ.matches||!track.offsetParent)return;
+    const box=track.getBoundingClientRect();
+    const first=items[0].getBoundingClientRect();
+    const last=items[items.length-1].getBoundingClientRect();
+    prev.disabled=first.left>=box.left-8&&first.right<=box.right+8;
+    next.disabled=last.left>=box.left-8&&last.right<=box.right+8;
+  }
+  prev.addEventListener('click',()=>moveCat(-1));
+  next.addEventListener('click',()=>moveCat(1));
+  track.addEventListener('scroll',()=>{clearTimeout(syncCatArrows._t);syncCatArrows._t=setTimeout(syncCatArrows,60)},{passive:true});
+  catMQ.addEventListener('change',syncCatArrows);
+  syncCatArrows();
+  return syncCatArrows;
+}
+bindCatScroller($('#categories'));
+</script>
+
+
+</body></html>
